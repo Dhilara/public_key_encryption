@@ -1,0 +1,294 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PUBLIC KEY ENCRYPTION</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/admin_temp/img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/font-awesome.min.css">
+    <!-- adminpro icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/adminpro-custon-icon.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/meanmenu.min.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/jquery.mCustomScrollbar.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/vcss/normalize.css">
+    <!-- notifications CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/Lobibox.min.css">
+    <link rel="stylesheet" href="/static/admin_temp/css/notifications.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/admin_temp/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/static/admin_temp/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="#"><img src="/static/admin_temp/img/message/1.jpg" alt="" />
+                    </a>
+                    <h3>{{ session.uname }}</h3>
+                    <p>User</p>
+{#                    <strong>AP+</strong>#}
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item">
+{#                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>#}
+                            <a href="/user_home"  role="button" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i>HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user_view_profile"  role="button" class="nav-link dropdown-toggle"><i class="fa big-icon fa-user-plus"></i>VIEW PROFILE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user_view_users"  role="button" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i>OTHER USERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-building"></i> <span class="mini-dn">COMPLAINTS</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="/user_send_complaint" class="dropdown-item">Send Complaints</a>
+                                <a href="/user_view_comp" class="dropdown-item">View Reply</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/view_complaints"  role="button" class="nav-link dropdown-toggle"><i class="fa big-icon fa-inbox"></i>SEND REVIEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/logout"  role="button" class="nav-link dropdown-toggle"><i class="fa big-icon fa-sign-out"></i>LOGOUT</a>
+                        </li>
+       </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Header top area start-->
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="admin-logo logo-wrap-pro">
+                                    <a href="#"><img src="/static/admin_temp/img/logo/log.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">
+                   </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                <div class="header-right-info">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                <span class="admin-name">{{ session.uname }}</span>
+                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+
+                                                <li><a href="/"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+               </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+
+            <!-- Breadcome End-->
+            <!-- Mobile Menu start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="/adm_add_category">Category <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul class="collapse dropdown-header-top">
+                                                <li><a href="/adm_add_category_add">Add</a>
+                                                </li>
+                                                <li><a href="/adm_view_category">View</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                            <li><a data-toggle="collapse" data-target="#others" href="/adm_shelf_mngmnt">Shelf <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="others" class="collapse dropdown-header-top">
+                                                <li><a href="/adm_shelf_mngmnt_add">Add</a>
+                                                </li>
+                                                <li><a href="/adm_view_shelf">View</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="/adm_product_management">Product <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="demo" class="collapse dropdown-header-top">
+                                                <li><a href="/adm_product_management_add">Add</a>
+                                                </li>
+                                                <li><a href="/adm_view_product">View</a>
+                                                </li>
+                                               </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/adm_mart_ad">Mart_ad <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                                <li><a href="/adm_mart_ad_add">Add</a>
+                                                </li>
+                                                <li><a href="/adm_view_mart_ad">View</a>
+                                                </li>
+
+
+                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/adm_staff">Staff <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                                <li><a href="/adm_add_staff">Add</a>
+                                                </li>
+                                                <li><a href="/adm_view_staff">View</a>
+                                                </li>
+
+
+
+
+
+
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="/adm_view_feedback">Feedback <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="/logout">Logout <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 des-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+												<input type="text" placeholder="Search..." class="form-control">
+												<a href=""><i class="fa fa-search"></i></a>
+											</form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="/user_home">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Dashboard</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Notification start-->
+
+                                <div class="notification-bt responsive-btn">
+                                <div class="container" style="padding: 30px;">
+                                <div class="row">
+                                <div class="col-lg-12" >
+                                    {% block body %}
+
+                                    {% endblock %}
+                                </div>
+                                </div>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+            <!-- Notification End-->
+        </div>
+    </div>
+    <!-- Footer Start-->
+
+    <!-- Footer End-->
+    <!-- jquery
+		============================================ -->
+    <script src="/static/admin_temp/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="/static/admin_temp/js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="/static/admin_temp/js/jquery.meanmenu.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="/static/admin_temp/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="/static/admin_temp/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="/static/admin_temp/js/jquery.scrollUp.min.js"></script>
+    <!-- notification JS
+		============================================ -->
+    <script src="/static/admin_temp/js/Lobibox.js"></script>
+    <script src="/static/admin_temp/js/notification-active.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="/static/admin_temp/js/main.js"></script>
+</body>
+
+</html>

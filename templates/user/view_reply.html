@@ -1,0 +1,25 @@
+{% extends "user_panel.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+<table class="table table-bordered">
+    <tr>
+      <th>SL. NO.</th>
+      <th>DATE</th>
+      <th>COMPLAINT</th>
+      <th>REPLY</th>
+      <th>&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td align="center">{{ i['date'] }}</td>
+      <td>{{ i['complaint'] }}</td>
+      <td>{{ i['reply'] }}</td>
+      <td>
+        <a href="/user_del_comp/{{ i['complaint_id'] }}"  class="btn btn-danger" onclick="return confirm('Are you sure?')" >Delete</a>
+      </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

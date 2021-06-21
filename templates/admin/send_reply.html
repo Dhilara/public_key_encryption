@@ -1,0 +1,19 @@
+{% extends "admin_panel.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/send_reply_post">
+    <input type="hidden" name="cid" value="{{ cid }}"/>
+  <table class="table table-bordered" style="width:400px;" align="center">
+    <tr>
+      <th>Complaint</th>
+      <td>{{ comp }}</td>
+    </tr>
+    <tr>
+      <th>Reply</th>
+      <td><textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="SEND" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

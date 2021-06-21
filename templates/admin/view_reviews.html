@@ -1,0 +1,37 @@
+{% extends "admin_panel.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/view_reviews_post">
+  <table class="pull-right">
+  <tr>
+      <td>From</td>
+      <td>
+        <input type="date" name="textfield" id="textfield" />&emsp;
+      </td>
+      <td>To</td>
+      <td>
+        <input type="date" name="textfield2" id="textfield2" />
+      </td>
+      <td>
+        <input type="submit" name="button" id="button" value="SEARCH"  class="btn btn-primary" />
+      </td>
+    </tr>
+  </table>
+<br>
+<table class="table table-bordered">
+    <tr>
+      <th>SL. NO.</th>
+      <th>DATE</th>
+      <th>USER NAME</th>
+      <th>REVIEWS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td align="center">{{ i['date'] }}</td>
+      <td align="center"><img src="{{ i['image'] }}" height="100" width="100" /><br /><b>{{ i['name'] }}</b></td>
+      <td>{{ i['review'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "user_panel.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/user_view_users">
+
+  <table class="pull-right">
+  <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" name="textfield" id="textfield" />&emsp;
+      </td>
+      <td>
+        <input type="submit" name="button" id="button" value="SEARCH"  class="btn btn-primary" />
+      </td>
+    </tr>
+  </table>
+<br>
+<table class="table table-bordered">
+    <tr>
+      <th>SL. NO.</th>
+      <th>IMAGE</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>PHONE</th>
+      <th>ADDRESS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td align="center"><img src="{{ i['image'] }}" height="100" width="100" /></td>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['phone'] }}</td>
+      <td>{{ i['house'] }}<br>{{ i['place'] }}<br>{{ i['post'] }}<br>{{ i['pin'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
